@@ -6,7 +6,7 @@
 2. Em seguida instale o modelo `mistral` do ollama ```ollama run mistral```
 3. Clone o repositório
 4. Aguarde o arquivo `pom.xml` baixar as dependências
-5. Crie um bot no Telegram seguindo este passo a passo
+5. Crie um bot no Telegram seguindo este passo a passo<br>
    5.1. Procure o `BotFather` no Telegram, ele terá um símbolo de verificado e 2,4 milhões de usuários mensais<br>
    5.2. Digite `/start`, veja as opções e crie um novo bot com `/newbot`<br>
    5.3. Nomeie o seu bot e crie um usurname para ele<br>
