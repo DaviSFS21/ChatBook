@@ -2,7 +2,7 @@ import org.telegram.telegrambots.longpolling.TelegramBotsLongPollingApplication;
 
 public class Main {
     public static void main(String[] args) {
-        String botToken = "7450520521:AAF9m3WiVHi3WzK-9lqyaTHuuUPlYAldG9Q";
+        String botToken = "";
         try (TelegramBotsLongPollingApplication botsApplication = new TelegramBotsLongPollingApplication()) {
             botsApplication.registerBot(botToken, new MyAmazingBot(botToken));
             System.out.println("MyAmazingBot successfully started!");
