@@ -10,7 +10,7 @@ import java.util.List;
 public class Images {
     String model = "llava:7b";
 
-    public String teste(OllamaAPI ollamaAPI, String prompt) throws OllamaBaseException, IOException, InterruptedException {
+    public String convertImageToCode(OllamaAPI ollamaAPI, String prompt) throws OllamaBaseException, IOException, InterruptedException {
         OllamaResult result = ollamaAPI.generateWithImageFiles(model,
                 prompt,
                 List.of(new File("/home/augusto/Downloads/portfolio.png")),

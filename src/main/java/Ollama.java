@@ -14,7 +14,7 @@ public class Ollama {
         Images images = new Images();
         String response = "";
         try {
-            response = images.teste(ollamaAPI, prompt);
+            response = images.convertImageToCode(ollamaAPI, prompt);
         } catch (Exception error) {
             System.out.println(error);
         }
