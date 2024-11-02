@@ -1,4 +1,4 @@
-# ChatBook  🤖
+# ChatBot  🤖
 
 **ChatBot** é um bot interativo no Telegram que gera e apresenta o código
 HTML e CSS de uma imagem fornecida pelo usuário. Utilizando a API Llama e
