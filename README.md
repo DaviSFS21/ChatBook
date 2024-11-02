@@ -1,6 +1,19 @@
-# ChatBook
+# ChatBook  🤖
 
-## Como fazer funcionar localmente
+**ChatBot** é um bot interativo no Telegram que gera e apresenta o código
+HTML e CSS de uma imagem fornecida pelo usuário. Utilizando a API Llama e
+o modelo mistral do Ollama, o bot interpreta a imagem recebida, cria um 
+código HTML e CSS correspondente, e responde ao usuário no chat. Essa 
+aplicação facilita a criação de estrutura de páginas web com base em 
+imagens e serve como um recurso educativo e prático para iniciantes e 
+desenvolvedores em CSS e HTML.
+
+<img src="https://github.com/user-attachments/assets/8c199d3f-7a7f-4d5a-90dc-45071ea43b40" alt="imageBot" width="300"/>
+
+
+
+## Como fazer funcionar localmente ⚙️
+
 
 1. Em sua máquina, instale o Ollama ```sudo snap install ollama```
 2. Em seguida instale o modelo `mistral` do ollama ```ollama run mistral```
