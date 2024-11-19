@@ -10,7 +10,7 @@ desenvolvedores em CSS e HTML.
 
 <img src="https://github.com/user-attachments/assets/8c199d3f-7a7f-4d5a-90dc-45071ea43b40" alt="imageBot" width="300"/>
 
-
+Link das previews: https://frontend-chat-preview.vercel.app
 
 ## Como fazer funcionar localmente ⚙️
 
