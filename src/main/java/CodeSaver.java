@@ -1,44 +1,39 @@
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Scanner;
+import java.io.*;
+
 import java.util.UUID;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.errors.*;
 import org.eclipse.jgit.lib.Repository;
 import org.eclipse.jgit.storage.file.FileRepositoryBuilder;
+import org.eclipse.jgit.transport.RefSpec;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 
 public class CodeSaver {
-    public String Local(String code) {
+    public static void Local(String code) {
         String name = UUID.randomUUID() + ".html";
+        FileInputStream stream;
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("./pages"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("./src/main/java/pages/" + name))) {
             writer.write(code);
             System.out.println("HTML file created successfully!");
-            System.out.println("https://frontend-chat-preview.vercel.app/" + name);
+            System.out.println("https://chat-book-omega.vercel.app/" + name);
         } catch (IOException e) {
             System.out.println("Error creating HTML file: " + e.getMessage());
         }
+        CodeSaver.Push();
     }
 
-    public void Push() {
+    public static void Push() {
         Dotenv dotenv = Dotenv.load();
-        String accessToken = dotenv.get(ACCESS_TOKEN); // Seu token de acesso
+        String accessToken = dotenv.get("ACCESS_TOKEN"); // Seu token de acesso
 
         try {
-            FileRepositoryBuilder builder = new FileRepositoryBuilder();
-            Repository repository = builder.setGitDir(new File(repoPath))
-                    .readEnvironment()
-                    .findGitDir()
-                    .build();
-            Git git = new Git(repository);
+            Git git = Git.open(new File("."));
 
             // Adicionar arquivos e fazer commit
-            git.add().addFilepattern(".").call();
-            git.commit().setMessage("Automated commit from chatbot").call();
+            git.add().addFilepattern("src/main/java/pages/").call();
+            git.commit().setMessage("Automated commit from CodeSaver").call();
 
             // Configurar credenciais e fazer push
             git.push()
@@ -49,10 +44,8 @@ public class CodeSaver {
 
             System.out.println("Push realizado com sucesso!");
 
-        } catch (GitAPIException e) {
-            e.printStackTrace();
         } catch (GitAPIException | IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 }

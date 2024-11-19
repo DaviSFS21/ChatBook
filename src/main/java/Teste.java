@@ -1,4 +1,218 @@
-package PACKAGE_NAME;
-
 public class Teste {
+    public static void main(String[] args) {
+        String code = """
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>AIPage - AI HTML/CSS Generator</title>
+                    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                    <style>
+                        :root {
+                            --dark-bg: #121212;
+                            --dark-card: #1E1E1E;
+                            --accent-color: #4CAF50;
+                            --text-color: #E0E0E0;
+                        }
+                
+                        * {
+                            margin: 0;
+                            padding: 0;
+                            box-sizing: border-box;
+                        }
+                
+                        body {
+                            font-family: 'Arial', sans-serif;
+                            background-color: var(--dark-bg);
+                            color: var(--text-color);
+                            line-height: 1.6;
+                        }
+                
+                        .container {
+                            max-width: 1200px;
+                            margin: 0 auto;
+                            padding: 20px;
+                        }
+                
+                        header {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: 20px 0;
+                            border-bottom: 1px solid rgba(255,255,255,0.1);
+                        }
+                
+                        .logo {
+                            font-size: 24px;
+                            font-weight: bold;
+                            color: var(--accent-color);
+                        }
+                
+                        .hero {
+                            display: flex;
+                            align-items: center;
+                            gap: 50px;
+                            margin-top: 50px;
+                        }
+                
+                        .hero-content {
+                            flex: 1;
+                        }
+                
+                        .hero-content h1 {
+                            font-size: 3rem;
+                            margin-bottom: 20px;
+                            color: white;
+                        }
+                
+                        .hero-image {
+                            flex: 1;
+                            text-align: right;
+                        }
+                
+                        .hero-image img {
+                            max-width: 100%;
+                            border-radius: 10px;
+                        }
+                
+                        .features {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                            gap: 20px;
+                            margin-top: 50px;
+                        }
+                
+                        .feature-card {
+                            background-color: var(--dark-card);
+                            padding: 25px;
+                            border-radius: 10px;
+                            text-align: center;
+                            transition: transform 0.3s;
+                        }
+                
+                        .feature-card:hover {
+                            transform: scale(1.05);
+                        }
+                
+                        .feature-card i {
+                            font-size: 3rem;
+                            color: var(--accent-color);
+                            margin-bottom: 15px;
+                        }
+                
+                        .chatbot-demo {
+                            margin-top: 50px;
+                            background-color: var(--dark-card);
+                            border-radius: 10px;
+                            padding: 30px;
+                        }
+                
+                        #prompt-input {
+                            width: 100%;
+                            padding: 15px;
+                            background-color: var(--dark-bg);
+                            border: 1px solid #333;
+                            color: white;
+                            border-radius: 5px;
+                            margin-bottom: 15px;
+                        }
+                
+                        .demo-actions {
+                            display: flex;
+                            gap: 15px;
+                        }
+                
+                        .btn {
+                            background-color: var(--accent-color);
+                            color: white;
+                            border: none;
+                            padding: 12px 25px;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            transition: background-color 0.3s;
+                        }
+                
+                        .btn:hover {
+                            background-color: #45a049;
+                        }
+                
+                        @media (max-width: 768px) {
+                            .hero {
+                                flex-direction: column;
+                            }
+                
+                            .hero-image {
+                                text-align: center;
+                            }
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="container">
+                        <header>
+                            <div class="logo">AIPage</div>
+                            <nav>
+                                <a href="#" class="btn">Get Started</a>
+                            </nav>
+                        </header>
+                
+                        <section class="hero">
+                            <div class="hero-content">
+                                <h1>Transform Text into Web Pages Instantly</h1>
+                                <p>AIPage is an advanced AI-powered tool that converts your text descriptions into professional HTML and CSS code in seconds.</p>
+                                <a href="#demo" class="btn" style="margin-top: 20px;">Try Now</a>
+                            </div>
+                            <div class="hero-image">
+                                <img src="/api/placeholder/500/300" alt="AI Web Generator">
+                            </div>
+                        </section>
+                
+                        <section class="features">
+                            <div class="feature-card">
+                                <i class="fas fa-bolt"></i>
+                                <h3>Real-Time Generation</h3>
+                                <p>Instantly convert your ideas into functional web pages</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-code"></i>
+                                <h3>Complete Source Code</h3>
+                                <p>Get full HTML and CSS code ready to use</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-eye"></i>
+                                <h3>Live Preview</h3>
+                                <p>See your webpage before finalizing the design</p>
+                            </div>
+                        </section>
+                
+                        <section id="demo" class="chatbot-demo">
+                            <h2>AI Web Page Generator</h2>
+                            <input type="text" id="prompt-input" placeholder="Describe your webpage design...">
+                            <div class="demo-actions">
+                                <button class="btn" onclick="generatePage()">Generate Page</button>
+                                <button class="btn">View Preview</button>
+                                <button class="btn">Copy Code</button>
+                            </div>
+                        </section>
+                    </div>
+                
+                    <script>
+                        function generatePage() {
+                            const prompt = document.getElementById('prompt-input').value;
+                            if (!prompt) {
+                                alert('Please enter a webpage description');
+                                return;
+                            }
+                
+                            // Simulated AI generation (would be replaced by actual API call)
+                            alert('Page Generation Simulated!\\nPrompt: ' + prompt);
+                        }
+                    </script>
+                </body>
+                </html>
+                """;
+
+        CodeSaver.Local(code);
+    }
 }
