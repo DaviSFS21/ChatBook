@@ -1,0 +1,16 @@
+"Com base na imagem fornecida, gere um código HTML e CSS que replica o design visual de forma fiel e precisa. Siga estas diretrizes:
+
+HTML:
+
+Estruture o layout usando tags semânticas ( header, nav, main, footer, etc.) e divida em contêineres bem definidos que correspondem aos diferentes frascos da imagem.
+Atribuir classes e IDs descritivos para facilitar o estilo e a manipulação.
+CSS:
+
+Reproduz exatamente núcleos, tamanhos de fonte, espaçamentos, alinhamentos, e efeitos visuais como sombras, gradientes, bordas ou transparências.
+Use Flexbox ou CSS Grid para criar um layout responsivo que se adapte a telas de diferentes tamanhos.
+Inclui ajustes de responsividade, garantindo que o design permaneça fiel nas telas menores.
+Estilo e Precisão:
+
+Atente-se aos detalhes finos, como arredondamento de bordas, sombras, ícones e efeitos visuais.
+Certifique-se de que os elementos e as proporções sejam votadas ao visual original.
+Retorne o código HTML e CSS completos e formatados, prontos para serem utilizados em uma página web."

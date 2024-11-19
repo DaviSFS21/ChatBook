@@ -1,14 +1,21 @@
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.UUID;
 import io.github.cdimascio.dotenv.Dotenv;
+import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.api.errors.*;
+import org.eclipse.jgit.lib.Repository;
+import org.eclipse.jgit.storage.file.FileRepositoryBuilder;
+import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 
 public class CodeSaver {
     public String Local(String code) {
-        String name = UUID.randomUUID() + ".html"
+        String name = UUID.randomUUID() + ".html";
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter('./pages'))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("./pages"))) {
             writer.write(code);
             System.out.println("HTML file created successfully!");
             System.out.println("https://frontend-chat-preview.vercel.app/" + name);
@@ -21,7 +28,7 @@ public class CodeSaver {
         Dotenv dotenv = Dotenv.load();
         String accessToken = dotenv.get(ACCESS_TOKEN); // Seu token de acesso
 
-        try {=
+        try {
             FileRepositoryBuilder builder = new FileRepositoryBuilder();
             Repository repository = builder.setGitDir(new File(repoPath))
                     .readEnvironment()
@@ -44,6 +51,8 @@ public class CodeSaver {
 
         } catch (GitAPIException e) {
             e.printStackTrace();
+        } catch (GitAPIException | IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }
