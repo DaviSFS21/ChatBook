@@ -24,7 +24,7 @@ Link das previews: https://frontend-chat-preview.vercel.app
    5.3. Nomeie o seu bot e crie um usurname para ele<br>
    5.4. Gere um token com `/token` <br>
 7. Substitua o `botToken` no arquivo `Main.java` pelo seu token gerado durante o tutorial
-   7.1. Você pode também criar um arquivo `.env` e colocar o seu TOKEN no `ACCESS_TOKEN`, assim como mostra o `.env.example`
+   7.1. Você pode também criar um arquivo `.env` e colocar o seu TOKEN no `TELEGRAM_TOKEN`, assim como mostra o `.env.example`
 8. Vá ao arquivo `Main.java` e execute
 
 ## Prompts bem sucedidos
