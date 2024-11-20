@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<style>
+  /* Global Styles */
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+  }
+
+  /* Profile Section */
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .profile img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  .profile h2 {
+    margin-top: 0;
+  }
+
+  /* Posts, Events, and Products Cards */
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .card img {
+    width: 100%;
+    height: 150px;
+    border-radius: 50%;
+  }
+  .card h2 {
+    margin-top: 0;
+  }
+  .card p {
+    margin-bottom: 20px;
+  }
+
+  /* Navigation Menu */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav a {
+    color: #333;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+
+  /* Search Bar */
+  .search-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border: none;
+  }
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jonathan's Web App</title>
+</head>
+<body>
+  <div class="profile">
+    <img src="profile-picture.jpg" alt="Jonathan">
+    <h2>Jonathan</h2>
+  </div>
+  <nav>
+    <a href="#">Dashboard</a>
+    <a href="#">Settings</a>
+    <a href="#">Notifications</a>
+    <a href="#">Logout</a>
+  </nav>
+  <div class="search-bar">
+    <input type="text" placeholder="Search...">
+  </div>
+  <section class="cards">
+    <div class="card">
+      <img src="post1.jpg" alt="Post 1">
+      <h2>Post 1</h2>
+      <p>This is post 1</p>
+    </div>
+    <div class="card">
+      <img src="event1.jpg" alt="Event 1">
+      <h2>Event 1</h2>
+      <p>This is event 1</p>
+    </div>
+    <div class="card">
+      <img src="product1.jpg" alt="Product 1">
+      <h2>Product 1</h2>
+      <p>This is product 1</p>
+    </div>
+  </section>
+</body>
+</html>
