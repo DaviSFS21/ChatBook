@@ -1,0 +1,73 @@
+```
+<!DOCTYPE html>
+<head>
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Colors */
+    body {
+      background-color: #E7F5FF;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: #333;
+    }
+
+    a {
+      color: #4CAF50;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      /* Adjust the layout for smaller screens */
+      body {
+        width: auto;
+        margin: 0 auto;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="name">Jonathan</h1>
+      <img src="placeholder.jpg" alt="Profile Picture" class="profile-pic">
+    </header>
+    <section class="posts events products">
+      <div class="post card">
+        <img src="post-thumbnail.jpg" alt="Post Thumbnail">
+        <h2 class="title">Post Title</h2>
+        <p class="description">Post Description</p>
+      </div>
+      <div class="event card">
+        <img src="event-thumbnail.jpg" alt="Event Thumbnail">
+        <h2 class="title">Event Title</h2>
+        <p class="description">Event Description</p>
+      </div>
+      <div class="product card">
+        <img src="product-thumbnail.jpg" alt="Product Thumbnail">
+        <h2 class="title">Product Title</h2>
+        <p class="description">Product Description</p>
+      </div>
+    </section>
+    <nav class="navigation">
+      <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Notifications</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+  </div>
+</body>
+```
+This code creates a basic layout with a purple and white color scheme, a header section with the user's name and profile picture, a middle section with three card-like elements for posts, events, and products, and a bottom navigation menu. The `style` tags are used to define global styles and responsive styles for smaller screens.
