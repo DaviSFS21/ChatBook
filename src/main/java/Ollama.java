@@ -11,10 +11,10 @@ public class Ollama {
 
         ollamaAPI.setRequestTimeoutSeconds(1000);
 
-        Images images = new Images();
+        Functions functions = new Functions();
         String response = "";
         try {
-            response = images.convertImageToCode(ollamaAPI, prompt);
+            response = functions.convertTextToCode(ollamaAPI, prompt);
         } catch (Exception error) {
             System.out.println(error);
         }

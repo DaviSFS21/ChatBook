@@ -14,8 +14,9 @@ Link das previews: https://frontend-chat-preview.vercel.app
 
 ## Como fazer funcionar localmente ⚙️
 
-
 1. Em sua máquina, instale o Ollama ```sudo snap install ollama```
+
+[//]: # (ainda iremos verificar qual modelo correto para se usar 2. Em seguida instale o modelo `mistral` do ollama ```ollama run mistral```)
 2. Em seguida instale o modelo `mistral` do ollama ```ollama run mistral```
 3. Clone o repositório
 4. Aguarde o arquivo `pom.xml` baixar as dependências
@@ -24,5 +25,6 @@ Link das previews: https://frontend-chat-preview.vercel.app
    5.2. Digite `/start`, veja as opções e crie um novo bot com `/newbot`<br>
    5.3. Nomeie o seu bot e crie um usurname para ele<br>
    5.4. Gere um token com `/token` <br>
-7. Substitua o TOKEN pelo seu gerado durante o tutorial
+7. Substitua o `botToken` no arquivo `Main.java` pelo seu token gerado durante o tutorial
+   7.1. Você pode também criar um arquivo `.env` e colocar o seu TOKEN no `ACCESS_TOKEN`, assim como mostra o `.env.example`
 8. Vá ao arquivo `Main.java` e execute

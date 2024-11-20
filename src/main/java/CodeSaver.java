@@ -4,15 +4,12 @@ import java.util.UUID;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.errors.*;
-import org.eclipse.jgit.lib.Repository;
-import org.eclipse.jgit.storage.file.FileRepositoryBuilder;
 import org.eclipse.jgit.transport.RefSpec;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 
 public class CodeSaver {
     public static void Local(String code) {
         String name = UUID.randomUUID() + ".html";
-        FileInputStream stream;
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("./src/main/java/pages/" + name))) {
             writer.write(code);
