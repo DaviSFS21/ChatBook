@@ -8,7 +8,7 @@ import org.eclipse.jgit.transport.RefSpec;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 
 public class CodeSaver {
-    public static void Local(String code) {
+    public static void createFile(String code) {
         String name = UUID.randomUUID() + ".html";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("./src/main/java/pages/" + name))) {
@@ -18,10 +18,10 @@ public class CodeSaver {
         } catch (IOException e) {
             System.out.println("Error creating HTML file: " + e.getMessage());
         }
-        CodeSaver.Push();
+        CodeSaver.pushMods();
     }
 
-    public static void Push() {
+    public static void pushMods() {
         Dotenv dotenv = Dotenv.load();
         String accessToken = dotenv.get("ACCESS_TOKEN"); // Seu token de acesso
 
