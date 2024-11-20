@@ -36,8 +36,6 @@ public class CodeSaver {
                     .setRefSpecs(new RefSpec("refs/heads/main"))
                     .call();
 
-            System.out.println("Push realizado com sucesso!");
-
         } catch (GitAPIException | IOException e) {
             e.printStackTrace();
         }

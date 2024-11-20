@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 public class Functions {
     public String convertDescriptionToCode(OllamaAPI ollamaAPI, String prompt) throws OllamaBaseException, IOException, InterruptedException {
         String newPrompt = prompt +
-                "Only return the HTML and CSS code. Put the css code inside <style> tag. Do not write \"html\" before "+
+                "\nOnly return the HTML and CSS code. Put the css code inside <style> tag. Do not write \"html\" before "+
                 "the html code. Exclude explanations, comments, and JavaScript. Limit the response to a maximum of 4000 characters.";
         OllamaResult result = ollamaAPI.generate("llama2:7b", newPrompt, false, new OptionsBuilder().build());
 
