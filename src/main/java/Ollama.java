@@ -14,7 +14,7 @@ public class Ollama {
         Functions functions = new Functions();
         String response = "";
         try {
-            response = functions.convertTextToCode(ollamaAPI, prompt);
+            response = functions.convertDescriptionToCode(ollamaAPI, prompt);
         } catch (Exception error) {
             System.out.println(error);
         }
