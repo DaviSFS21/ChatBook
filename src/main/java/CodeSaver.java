@@ -8,31 +8,164 @@ import org.eclipse.jgit.transport.RefSpec;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 
 public class CodeSaver {
-    public static void createFile(String code) {
+    public static String createFile(String code) {
+        code = """
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Jonathan's Web App</title>
+                    <link rel="stylesheet" href="styles.css">
+                </head>
+                <body>
+                    <div class="container">
+                        <header class="top-section">
+                            <h1 class="profile-name">Jonathan</h1>
+                            <img src="profile-picture.jpg" alt="Profile Picture">
+                        </header>
+                        <main class="middle-section">
+                            <card class="post" id="post-card">
+                                <figure class="thumbnail">
+                                    <img src="post-image.jpg" alt="Post Image">
+                                </figure>
+                                <h2 class="post-title">Post Title</h2>
+                                <p class="post-description">Post Description</p>
+                            </card>
+                            <card class="event" id="event-card">
+                                <figure class="thumbnail">
+                                    <img src="event-image.jpg" alt="Event Image">
+                                </figure>
+                                <h2 class="event-title">Event Title</h2>
+                                <p class="event-description">Event Description</p>
+                            </card>
+                            <card class="product" id="product-card">
+                                <figure class="thumbnail">
+                                    <img src="product-image.jpg" alt="Product Image">
+                                </figure>
+                                <h2 class="product-title">Product Title</h2>
+                                <p class="product-description">Product Description</p>
+                            </card>
+                        </main>
+                        <nav class="bottom-section">
+                            <ul class="navigation">
+                                <li><a href="#">Dashboard</a></li>
+                                <li><a href="#">Settings</a></li>
+                                <li><a href="#">Notifications</a></li>
+                                <li><a href="#">Logout</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </body>
+                </html>
+                
+                <style>
+                body {
+                    font-family: Arial, sans-serif;
+                }
+                
+                .container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
+                
+                .top-section {
+                    background-color: #333;
+                    padding: 20px;
+                }
+                
+                .profile-name {
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                }
+                
+                .profile-picture {
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                    margin-bottom: 10px;
+                }
+                
+                .middle-section {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+                
+                .card {
+                    margin: 20px;
+                    padding: 20px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                }
+                
+                .thumbnail {
+                    width: 100%;
+                    height: 300px;
+                    object-fit: cover;
+                    border-radius: 5px;
+                }
+                
+                .post-title {
+                    margin-bottom: 20px;
+                }
+                
+                .post-description {
+                    margin-bottom: 20px;
+                }
+                
+                .event-title {
+                    margin-bottom: 20px;
+                }
+                
+                .event-description {
+                    margin-bottom: 20px;
+                }
+                
+                .product-title {
+                    margin-bottom: 20px;
+                }
+                
+                .product-description {
+                    margin-bottom: 20px;
+                }
+                
+                .bottom-section {
+                    background-color: #f9f9f9;
+                    padding: 20px;
+                }
+                
+                .navigation {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                }
+                
+                .navigation li {
+                    margin-right: 20px;
+                }
+                <style>
+                """;
         String name = UUID.randomUUID() + ".html";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("./src/main/java/pages/" + name))) {
             writer.write(code);
-            System.out.println("HTML file created successfully!");
-            System.out.println("https://frontend-chat-preview.vercel.app/" + name);
         } catch (IOException e) {
             System.out.println("Error creating HTML file: " + e.getMessage());
         }
-        CodeSaver.pushMods();
+        pushMods();
+        return "https://chat-book-omega.vercel.app/" + name;
     }
 
-    public static void pushMods() {
+    private static void pushMods() {
         Dotenv dotenv = Dotenv.load();
-        String accessToken = dotenv.get("ACCESS_TOKEN"); // Seu token de acesso
+        String accessToken = dotenv.get("ACCESS_TOKEN");
 
         try {
             Git git = Git.open(new File("."));
 
-            // Adicionar arquivos e fazer commit
             git.add().addFilepattern("src/main/java/pages/").call();
             git.commit().setMessage("Automated commit from CodeSaver").call();
 
-            // Configurar credenciais e fazer push
             git.push()
                     .setCredentialsProvider(new UsernamePasswordCredentialsProvider("DaviSFS21", accessToken))
                     .setRemote("origin")

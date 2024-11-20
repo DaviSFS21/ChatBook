@@ -1,46 +1,3 @@
-# ChatBot  🤖
-
-**ChatBot** é um bot interativo no Telegram que gera e apresenta o código
-HTML e CSS de uma imagem fornecida pelo usuário. Utilizando a API Llama e
-o modelo mistral do Ollama, o bot interpreta a imagem recebida, cria um 
-código HTML e CSS correspondente, e responde ao usuário no chat. Essa 
-aplicação facilita a criação de estrutura de páginas web com base em 
-imagens e serve como um recurso educativo e prático para iniciantes e 
-desenvolvedores em CSS e HTML.
-
-<img src="https://github.com/user-attachments/assets/8c199d3f-7a7f-4d5a-90dc-45071ea43b40" alt="imageBot" width="300"/>
-
-Link das previews: https://frontend-chat-preview.vercel.app
-
-## Como fazer funcionar localmente ⚙️
-
-1. Em sua máquina, instale o Ollama ```sudo snap install ollama```
-2. Em seguida instale o modelo `llama2:7b` do ollama ```ollama run llama2:7b```
-3. Clone o repositório
-4. Aguarde o arquivo `pom.xml` baixar as dependências
-5. Crie um bot no Telegram seguindo este passo a passo<br>
-   5.1. Procure o `BotFather` no Telegram, ele terá um símbolo de verificado e 2,4 milhões de usuários mensais<br>
-   5.2. Digite `/start`, veja as opções e crie um novo bot com `/newbot`<br>
-   5.3. Nomeie o seu bot e crie um usurname para ele<br>
-   5.4. Gere um token com `/token` <br>
-7. Crie um arquivo `.env` na raíz do projeto e coloque o seu TOKEN no `TELEGRAM_TOKEN`, assim como mostra o `.env.example`
-8. Coloque no `.env` um TOKEN seu gerado no Github com permissões de `repo` no `ACCESS_TOKEN`, assim como mostra o `.env.example`
-9. Vá ao arquivo `Main.java` e execute
-
-## Prompts bem sucedidos
-
-```
-Generate responsive HTML and CSS code for a web app interface with these features:
-- A purple and white color scheme.
-- Top section: user profile with the name 'Jonathan' and a placeholder profile picture.
-- Middle section: three cards for 'posts', 'events', and 'products', each with a thumbnail, title, and description.
-- Bottom section: navigation menu on the left with items like 'Dashboard', 'Settings', 'Notifications', and 'Logout'. Include a search bar in the top-right corner.
-Only return the HTML and CSS code. Put the css code inside <style> tag. Do not write "html" before the html code. Exclude explanations, comments, and JavaScript. Limit the response to a maximum of 4000 characters.
-```
-
-Resposta: 
-```
-html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,8 +47,7 @@ html
 </body>
 </html>
 
-
-css
+<style>
 body {
     font-family: Arial, sans-serif;
 }
@@ -175,6 +131,4 @@ body {
 .navigation li {
     margin-right: 20px;
 }
-
-Note that this code is just a starting point, and you may need to adjust the CSS to fit your specific design needs. Additionally, this code does not include any JavaScript or interactivity, so you will need to add that if you want to create a more dynamic user experience.
-```
+<style>

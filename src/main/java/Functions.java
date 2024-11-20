@@ -9,6 +9,14 @@ public class Functions {
     public String convertDescriptionToCode(OllamaAPI ollamaAPI, String prompt) throws OllamaBaseException, IOException, InterruptedException {
         OllamaResult result = ollamaAPI.generate("llama2:7b", prompt, false, new OptionsBuilder().build());
 
-        return result.getResponse();
+        String code = cleanCode(result.getResponse());
+
+        String vercelLink = CodeSaver.createFile(code);
+
+        return vercelLink;
+    }
+
+    private String cleanCode(String code) {
+        return code;
     }
 }
