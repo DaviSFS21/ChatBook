@@ -27,7 +27,7 @@ Link das previews: https://frontend-chat-preview.vercel.app
 8. Coloque no `.env` um TOKEN seu gerado no Github com permissões de `repo` no `ACCESS_TOKEN`, assim como mostra o `.env.example`
 9. Vá ao arquivo `Main.java` e execute
 
-## Prompts bem sucedidos
+## Prompts bem sucedido
 
 ```
 Generate responsive HTML and CSS code for a web app interface with these features:
@@ -35,146 +35,117 @@ Generate responsive HTML and CSS code for a web app interface with these feature
 - Top section: user profile with the name 'Jonathan' and a placeholder profile picture.
 - Middle section: three cards for 'posts', 'events', and 'products', each with a thumbnail, title, and description.
 - Bottom section: navigation menu on the left with items like 'Dashboard', 'Settings', 'Notifications', and 'Logout'. Include a search bar in the top-right corner.
-Only return the HTML and CSS code. Put the css code inside <style> tag. Do not write "html" before the html code. Exclude explanations, comments, and JavaScript. Limit the response to a maximum of 4000 characters.
 ```
 
-Resposta: 
+Resposta:
 ```
-html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonathan's Web App</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jonathan's Web App</title>
+  <style>
+      /* Global Styles */
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+      }
+      .container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          height: 100vh;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: #f7f7f7;
+      }
+      .top-section {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 300px;
+          margin-bottom: 20px;
+      }
+      .profile-picture {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          margin: 0 10px;
+      }
+      .user-profile {
+          margin-bottom: 20px;
+          font-size: 18px;
+          color: #333;
+          text-align: center;
+      }
+      .posts-cards, .events-cards, .products-cards {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          height: 300px;
+          margin-bottom: 20px;
+      }
+      .posts-card {
+          background-color: #fff;
+          border: 1px solid #ddd;
+          padding: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      .events-card {
+          background-color: #fff;
+          border: 1px solid #ddd;
+          padding: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      .products-card {
+          background-color: #fff;
+          border: 1px solid #ddd;
+          padding: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      .nav-links {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 20px;
+      }
+      .nav-link {
+          color: #333;
+          text-decoration: none;
+          font-size: 16px;
+      }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header class="top-section">
-            <h1 class="profile-name">Jonathan</h1>
-            <img src="profile-picture.jpg" alt="Profile Picture">
-        </header>
-        <main class="middle-section">
-            <card class="post" id="post-card">
-                <figure class="thumbnail">
-                    <img src="post-image.jpg" alt="Post Image">
-                </figure>
-                <h2 class="post-title">Post Title</h2>
-                <p class="post-description">Post Description</p>
-            </card>
-            <card class="event" id="event-card">
-                <figure class="thumbnail">
-                    <img src="event-image.jpg" alt="Event Image">
-                </figure>
-                <h2 class="event-title">Event Title</h2>
-                <p class="event-description">Event Description</p>
-            </card>
-            <card class="product" id="product-card">
-                <figure class="thumbnail">
-                    <img src="product-image.jpg" alt="Product Image">
-                </figure>
-                <h2 class="product-title">Product Title</h2>
-                <p class="product-description">Product Description</p>
-            </card>
-        </main>
-        <nav class="bottom-section">
-            <ul class="navigation">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Notifications</a></li>
-                <li><a href="#">Logout</a></li>
-            </ul>
-        </nav>
-    </div>
+  <div class="container">
+      <div class="top-section">
+          <img src="profile-picture.jpg" alt="Jonathan's Profile Picture">
+          <div class="user-profile">Jonathan</div>
+      </div>
+      <div class="nav-links">
+          <a href="#" class="nav-link">Dashboard</a>
+          <a href="#" class="nav-link">Settings</a>
+          <a href="#" class="nav-link">Notifications</a>
+          <a href="#" class="nav-link">Logout</a>
+      </div>
+      <div class="posts-cards events-cards products-cards">
+          <div class="posts-card">Post 1</div>
+          <div class="events-card">Event 1</div>
+          <div class="products-card">Product 1</div>
+          <div class="posts-card">Post 2</div>
+          <div class="events-card">Event 2</div>
+          <div class="products-card">Product 2</div>
+      </div>
+  </div>
+  <script src=""></script>
 </body>
 </html>
 
+This HTML code creates a simple web app with a purple and white color scheme, a profile picture of Jonathan, and three card sections for posts, events, and products. The navigation menu is located on the left side of the page, and a search bar is located in the top-right corner.
 
-css
-body {
-    font-family: Arial, sans-serif;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.top-section {
-    background-color: #333;
-    padding: 20px;
-}
-
-.profile-name {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.profile-picture {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
-
-.middle-section {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.card {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.thumbnail {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.post-title {
-    margin-bottom: 20px;
-}
-
-.post-description {
-    margin-bottom: 20px;
-}
-
-.event-title {
-    margin-bottom: 20px;
-}
-
-.event-description {
-    margin-bottom: 20px;
-}
-
-.product-title {
-    margin-bottom: 20px;
-}
-
-.product-description {
-    margin-bottom: 20px;
-}
-
-.bottom-section {
-    background-color: #f9f9f9;
-    padding: 20px;
-}
-
-.navigation {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.navigation li {
-    margin-right: 20px;
-}
-
-Note that this code is just a starting point, and you may need to adjust the CSS to fit your specific design needs. Additionally, this code does not include any JavaScript or interactivity, so you will need to add that if you want to create a more dynamic user experience.
+Note: This code does not include any JavaScript code, so it will only work as a static web page without any interactivity.
 ```
