@@ -14,7 +14,7 @@ public class CodeSaver {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("./src/main/java/pages/" + name))) {
             writer.write(code);
             System.out.println("HTML file created successfully!");
-            System.out.println("https://chat-book-omega.vercel.app/" + name);
+            System.out.println("https://frontend-chat-preview.vercel.app/" + name);
         } catch (IOException e) {
             System.out.println("Error creating HTML file: " + e.getMessage());
         }
