@@ -144,8 +144,7 @@ Resposta:
   <script src=""></script>
 </body>
 </html>
-
-This HTML code creates a simple web app with a purple and white color scheme, a profile picture of Jonathan, and three card sections for posts, events, and products. The navigation menu is located on the left side of the page, and a search bar is located in the top-right corner.
-
-Note: This code does not include any JavaScript code, so it will only work as a static web page without any interactivity.
 ```
+
+[Site gerado](https://frontend-chat-preview.vercel.app/2eaff354-539f-4501-bdd5-4d1cfad574fa.html):
+![LandingPage.png](assets/images/LandingPage.png)
