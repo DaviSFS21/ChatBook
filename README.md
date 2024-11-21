@@ -148,11 +148,11 @@ Resposta:
 
 ## Fluxo funcionando
 
-Pedindo para o Bot gerar o código do site com as especificações desejadas:
+Pedindo para o Bot gerar o código do site com as especificações desejadas:<br>
 ![Prompt.png](assets/images/Prompt.png)
 
 Irá gerar o link:<br>
 [https://frontend-chat-preview.vercel.app/2eaff354-539f-4501-bdd5-4d1cfad574fa.html](https://frontend-chat-preview.vercel.app/2eaff354-539f-4501-bdd5-4d1cfad574fa.html)
 
-E o código tende a mudar, independente de manter o mesmo prompt. Dessa vez, a tela foi gerada da seguinte forma:
+E o código tende a mudar, independente de manter o mesmo prompt. Dessa vez, a tela foi gerada da seguinte forma:<br>
 ![LandingPage.png](assets/images/LandingPage.png)
