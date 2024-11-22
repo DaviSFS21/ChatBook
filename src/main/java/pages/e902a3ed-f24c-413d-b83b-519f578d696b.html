@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<style>
+  /* Global Styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+  }
+
+  /* Profile Section */
+  .profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+
+  .name {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  /* Posts, Events, and Products Cards */
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .card-thumbnail {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .card-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .card-description {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  /* Navigation Menu */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav li {
+    margin-right: 20px;
+  }
+
+  /* Search Bar */
+  .search-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+  }
+</style>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Web App Interface</title>
+  </head>
+  <body>
+    <div class="profile-section">
+      <img class="profile-pic" src="https://picsum.photos/200/300" alt="Jonathan">
+      <span class="name">Jonathan</span>
+    </div>
+    <nav class=" navigation">
+      <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Notifications</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+    <div class="search-bar">
+      <input type="text" placeholder="Search...">
+    </div>
+  </body>
+</html>
